@@ -27,6 +27,7 @@ const styles = {
   },
   checkbox: {
     marginTop: 10,
+    marginBottom: 10,
   },
   customContentStyle: {
     width: '30%',
@@ -34,6 +35,9 @@ const styles = {
   },
   signUpStyle: {
     marginTop: 15,
+  },
+  loginLink: {
+    marginLeft: 5,
   },
 };
 
@@ -62,7 +66,7 @@ class Login extends Component {
 
   render(){
     const actions = [
-      <a href="#">Forget My Password</a>,
+      <a href="http://www.webjustify.com">Forget My Password</a>,
       <RaisedButton
         label="Cancel"
         onClick={this.handleClose}
@@ -86,7 +90,7 @@ class Login extends Component {
           style={styles.buttonStyle} 
         />      
         <Dialog
-          title="Sign In To Chetu "
+          title="Sign In To Webjustify "
           actions={actions}
           modal={true}
           open={this.state.open}
@@ -115,7 +119,7 @@ class Login extends Component {
         />
         <signUp style={styles.signUpStyle}>
         I don't have an account 
-          <a href="#"> 
+          <a href="http://www.webjustify.com"  style={styles.loginLink}> 
           Sign Up Now
           </a>
         </signUp>

@@ -73,7 +73,7 @@ class SignUp extends Component {
 
   handleNext = () => {
     const {stepIndex} = this.state;
-    if (stepIndex == 2) {
+    if (stepIndex === 2) {
       this.setState({stepIndex: 0, finished: false});
       window.location = "http://www.webjustify.com";
     }
@@ -189,7 +189,7 @@ class SignUp extends Component {
           style={styles.buttonStyle} 
         />              
         <Dialog
-          title="Sign Up To Chetu "
+          title="Sign Up To Webjustify "
           actions={actions}
           modal={true}
           open={this.state.open}
@@ -216,7 +216,7 @@ class SignUp extends Component {
           {finished ? (
             <div>I don't have account 
               <a
-                href="#"
+                href="http://www.webjustify.com"
                 onClick={(event) => {
                   event.preventDefault();
                   this.setState({stepIndex: 0, finished: false});
@@ -240,7 +240,7 @@ class SignUp extends Component {
         />
         <login style={styles.loginStyle}>
         I have an account 
-          <a href="#" style={styles.loginLink}> 
+          <a href="http://www.webjustify.com" style={styles.loginLink}> 
             Login
           </a>
         </login>
