@@ -32,13 +32,17 @@ const styles = {
   },
   checkbox: {
     marginTop: 10,
+    marginBottom: 10,
   },
   customContentStyle: {
-    width: '30%',
+    width: '40%',
     maxWidth: 'none',
   },
   loginStyle: {
     marginTop: 15,
+  },
+  loginLink: {
+    marginLeft: 5,
   },
 };
 
@@ -69,6 +73,10 @@ class SignUp extends Component {
 
   handleNext = () => {
     const {stepIndex} = this.state;
+    if (stepIndex == 2) {
+      this.setState({stepIndex: 0, finished: false});
+      window.location = "http://www.webjustify.com";
+    }
     this.setState({
       stepIndex: stepIndex + 1,
       finished: stepIndex >= 2,
@@ -85,32 +93,91 @@ class SignUp extends Component {
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return 'Select campaign settings...';
+        return <div>
+                <TextField
+                  floatingLabelText="First Name"
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  fullWidth={true}
+                /><br />
+                <TextField
+                  floatingLabelText="Last Name"
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  fullWidth={true}
+                /><br />
+                <TextField
+                  floatingLabelText="Phone Number"
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  fullWidth={true}
+                />
+            </div>;
       case 1:
-        return 'What is an ad group anyways?';
+        return <div><TextField
+                      floatingLabelText="Username"
+                      floatingLabelStyle={styles.floatingLabelStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                      underlineFocusStyle={styles.underlineStyle}
+                      fullWidth={true}
+                    /><br />  
+                    <TextField
+                      floatingLabelText="Email"
+                      floatingLabelStyle={styles.floatingLabelStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                      underlineFocusStyle={styles.underlineStyle}
+                      fullWidth={true}
+                    /><br />  
+                    <TextField
+                      type="password"
+                      floatingLabelText="Password"
+                      floatingLabelStyle={styles.floatingLabelStyle}
+                      floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                      underlineFocusStyle={styles.underlineStyle}
+                      fullWidth={true}
+                    /><br />
+              </div>;
       case 2:
-        return 'This is the bit I really care about!';
+        return <TextField
+                floatingLabelText="Address"
+                floatingLabelStyle={styles.floatingLabelStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}
+                multiLine={true}
+                rows={2}
+                fullWidth={true}
+              />
       default:
-        return 'You\'re a long way from home sonny jim!';
+        return 'Your default steper';
     }
   }
 
   render(){
     const {finished, stepIndex} = this.state;
     const contentStyle = {margin: '0 16px'};
-    const actions = [
+    const actions = [      
+      <RaisedButton
+        label="Back"
+        disabled={stepIndex === 0}
+        onClick={this.handlePrev}
+        primary={true}
+        style={{marginRight: 12}}
+      />,
+      <RaisedButton
+        label={stepIndex === 2 ? 'Submit' : 'Next'}
+        value={stepIndex === 2 ? 'Submit' : 'Next'}
+        secondary={true}
+        onClick={this.handleNext}
+      />,
       <RaisedButton
         label="Cancel"
         onClick={this.handleClose}
         secondary={true}
         style={styles.buttonStyle}
-      />,
-      <RaisedButton
-        label="Submit"
-        onClick={this.handleClose}
-        secondary={true}
-        style={styles.buttonStyle}
-      />,
+      />
     ];
 
     return (
@@ -120,8 +187,7 @@ class SignUp extends Component {
           onClick={this.handleOpen} 
           secondary={true}
           style={styles.buttonStyle} 
-        />
-              
+        />              
         <Dialog
           title="Sign Up To Chetu "
           actions={actions}
@@ -132,106 +198,50 @@ class SignUp extends Component {
         <Stepper activeStep={stepIndex}>
           <Step>
             <StepLabel>
-              <TextField
-                floatingLabelText="First Name"
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                fullWidth={true}
-              /><br />
-              <TextField
-                floatingLabelText="Last Name"
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                fullWidth={true}
-              /><br />
-              <TextField
-                floatingLabelText="Phone Number"
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                fullWidth={true}
-              /><br />
+              Basic Info
             </StepLabel>
           </Step>
           <Step>
             <StepLabel>
-              
+              Set Login Info
             </StepLabel>
           </Step>
           <Step>
-            <StepLabel>Create an ad</StepLabel>
+            <StepLabel>
+              Address Info
+            </StepLabel>
           </Step>
         </Stepper>
         <div style={contentStyle}>
           {finished ? (
-            <p>
+            <div>I don't have account 
               <a
                 href="#"
                 onClick={(event) => {
                   event.preventDefault();
                   this.setState({stepIndex: 0, finished: false});
                 }}
+                style={styles.loginLink}
               >
-                Click here
-              </a> to reset the example.
-            </p>
+                SignUp
+              </a>
+            </div>
           ) : (
             <div>
               <p>{this.getStepContent(stepIndex)}</p>
-              <div style={{marginTop: 12}}>
-                <RaisedButton
-                  label="Back"
-                  disabled={stepIndex === 0}
-                  onClick={this.handlePrev}
-                  style={{marginRight: 12}}
-                />
-                <RaisedButton
-                  label={stepIndex === 2 ? 'Finish' : 'Next'}
-                  primary={true}
-                  onClick={this.handleNext}
-                />
-              </div>
             </div>
           )}
         </div>
-           
-        <TextField
-          floatingLabelText="Username"
-          floatingLabelStyle={styles.floatingLabelStyle}
-          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-          underlineFocusStyle={styles.underlineStyle}
-          fullWidth={true}
-        /><br />  
-        <TextField
-          floatingLabelText="Email"
-          floatingLabelStyle={styles.floatingLabelStyle}
-          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-          underlineFocusStyle={styles.underlineStyle}
-          fullWidth={true}
-        /><br />  
-        <TextField
-          type="password"
-          floatingLabelText="Password"
-          floatingLabelStyle={styles.floatingLabelStyle}
-          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-          underlineFocusStyle={styles.underlineStyle}
-          fullWidth={true}
-        /><br />          
-        <TextField
-          floatingLabelText="Address"
-          floatingLabelStyle={styles.floatingLabelStyle}
-          floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-          underlineFocusStyle={styles.underlineStyle}
-          multiLine={true}
-          rows={2}
-          fullWidth={true}
-        /><br />        
+        <Checkbox
+          label="I am agree with Term & Condition"
+          checked={this.state.checked}
+          onCheck={this.updateCheck.bind(this)}
+          style={styles.checkbox}
+        />
         <login style={styles.loginStyle}>
         I have an account 
-          <a href="#"> 
-          Login
+          <a href="#" style={styles.loginLink}> 
+            Login
           </a>
         </login>
         </Dialog>
