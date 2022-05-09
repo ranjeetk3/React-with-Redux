@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /comments
+Disallow: /search
+Sitemap: https://www.GoodBookBible.study/sitemap-index.xml
+Sitemap: https://www.GoodBookBible.study/sitemap0.xml
+Sitemap: https://www.GoodBookBible.study/sitemap1.xml
+Sitemap: https://www.GoodBookBible.study/sitemap2.xml
+Sitemap: https://www.GoodBookBible.study/sitemap3.xml
+Sitemap: https://www.GoodBookBible.study/sitemap4.xml
+Sitemap: https://www.GoodBookBible.study/sitemap5.xml
+Sitemap: https://www.GoodBookBible.study/sitemap6.xml

@@ -1,0 +1,26 @@
+.validation-error-msg {
+  color: red;
+}
+
+.server-error-msg {
+  color: red;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.not-a-user {
+  cursor: pointer;
+}
+
+.not-a-user:hover {
+  color: #727cf5;
+}
+
+.forget-password {
+  cursor: pointer;
+}
+
+.forget-password:hover {
+  color: #727cf5;
+}

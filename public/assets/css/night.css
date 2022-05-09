@@ -1,0 +1,100 @@
+/* CSS Document */
+
+/*INDEX=====================================================*/
+nav.navbar,
+nav.navbar .top-navbar .container,
+.navbar-nav,
+.modal-content {
+  background: #272f3a !important;
+  border-color: #272f3a !important;
+}
+
+body,
+footer {
+  background: #272f3a !important;
+}
+body nav ul li a.nitePagination {
+  background: #282a2a !important;
+  color: #fff !important;
+}
+.niteCard {
+  background: #606161 !important;
+}
+
+.niteCard {
+  background: #606161 !important;
+  border-color: #282a2a !important;
+}
+
+.niteNavTabs {
+  border-color: #282a2a !important;
+}
+
+.niteBlocks {
+  background: #282a2a !important;
+  color: #fff !important;
+}
+
+/*9d9e9e*/
+.niteSearchBar {
+  background: #0e1a2a !important;
+  /*403611*/
+}
+.niteSearchIcon {
+  display: none;
+  /*background: #402311 !important;*/
+}
+
+.niteBreadcrumb,
+a.active {
+  background: #b9af89 !important;
+}
+
+.niteChapterTitle,
+.niteverseNumber,
+.verseTitle,
+.niteVerseOption {
+  color: #b9af89 !important;
+}
+
+.niteverseText,
+.niteCard-Title {
+  /*color: #fff !important;*/
+  color: #bcc6cc !important;
+}
+
+.navbar-brand {
+  color: #b99c89 !important;
+}
+
+.navbar-brand-special {
+  color: #fff3eb !important;
+}
+
+input.form-control {
+  background: #2b1b17;
+  border: #2b1b17;
+  color: #bcc6cc !important;
+}
+
+/*CHAPTERVIEW=====================================================*/
+.niteCardChapterview {
+  /*background-color: #0C090A;*/
+  background-color: #040c10;
+  border-color: #2b1b17;
+  /*border-color: #40371f;*/
+}
+
+/*search=====================================================*/
+.searchBriefResults {
+  color: #bcc6cc; /*silver*/
+}
+
+.page-link:hover {
+  background: #040c10 !important;
+  color: #fff !important;
+}
+.page-link {
+  background: #282a2a !important;
+  color: #fff !important;
+}

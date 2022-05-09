@@ -1,0 +1,27 @@
+/* CSS Document */
+
+.scaleUp25{
+	 transform: translateY(-4px);
+
+}
+
+.verseText{
+	font-size: 1.3rem !important
+}
+
+span.verseTitle{
+	font-size: 1rem !important;
+	position: relative;
+	top: 0px;
+	left: -12px;
+
+/*	transform: translateX(-40px);*/
+}
+
+span.verseTitleVerseOnly{
+	font-size: 1rem !important;
+}
+
+.pointer{
+	cursor: pointer;
+}

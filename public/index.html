@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#333" />
+    <link rel="canonical" href="https://goodbookbible.social" />
+    <meta
+      name="keywords"
+      content="good book bible, bible study, best bible, old testament bible, new testament bible, bible tool, read bible, highlight bible content, bible books, Apocrypha, Apocrypha books, Apocrypha bible"
+    />
+    <meta
+      name="description"
+      content="Social Media app for Bible enthusiast where students can form Bible study groups and share ideas. Add friends and followers from all nations and collaborate for the purpose of learning and understanding the Bible together. Provide your input and insight on interesting Bible topics while having a great time. Good Book Bible is helping to make the world a close knit community by connecting hands from across the world."
+    />
+    <meta name="author" content="Edtis Team" />
+    <meta
+      name="google-site-verification"
+      content="ulocL82nDfg-I60yb2H-c_NKaa2DA4W3VNbH0UsANOM"
+    />
     <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link
+      rel="manifest"
+      crossorigin="use-credentials"
+      href="%PUBLIC_URL%/manifest.json"
+    />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -19,13 +37,49 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>GoodBookBible | Social media | Good Book Bible</title>
+    <script
+      data-ad-client="ca-pub-9941591890230710"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-158674539-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-158674539-1");
+    </script>
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      function loadCssFile(src) {
+        var link = document.createElement("link");
+        link.href = src;
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        document.body.appendChild(link);
+      }
+      loadCssFile("%PUBLIC_URL%/assets/vendors/core/core.css");
+      loadCssFile("%PUBLIC_URL%/assets/fonts/feather-font/css/iconfont.css");
+      loadCssFile(
+        "%PUBLIC_URL%/assets/vendors/mdi/css/materialdesignicons.min.css"
+      );
+      loadCssFile(
+        "%PUBLIC_URL%/assets/vendors/font-awesome/css/font-awesome.min.css"
+      );
+      loadCssFile("%PUBLIC_URL%/assets/css/demo_5/style.css");
+      loadCssFile("%PUBLIC_URL%/assets/vendors/jquery-steps/jquery.steps.css");
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -36,5 +90,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script
+      type="text/jsx"
+      src="%PUBLIC_URL%/assets/vendors/core/core.js"
+    ></script>
+    <script
+      type="text/jsx"
+      src="%PUBLIC_URL%/assets/vendors/feather-icons/feather.min.js"
+    ></script>
+    <script type="text/jsx" src="%PUBLIC_URL%/assets/js/template.js"></script>
+    <script
+      type="text/jsx"
+      src="%PUBLIC_URL%/assets/vendors/jquery-steps/jquery.steps.min.js"
+    ></script>
+    <script type="text/jsx" src="%PUBLIC_URL%/assets/js/wizard.js"></script>
   </body>
 </html>

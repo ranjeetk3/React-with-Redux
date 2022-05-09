@@ -1,0 +1,357 @@
+/* CSS Document */
+
+/*INDEX=====================================================*/
+nav.navbar,
+nav.navbar .top-navbar .container,
+.navbar-nav {
+  background: #000000 !important;
+  border-color: #000000 !important;
+}
+
+body {
+  background: #000000 !important;
+}
+
+.footer {
+  border-top: 1px solid #000000 !important;
+  background: #000000 !important;
+}
+
+.strong-page .footer {
+  border-top: 1px solid #000000 !important;
+  background: #282f3a !important;
+}
+
+.chapter-view-page .footer {
+  border-top: 1px solid #000000 !important;
+  background: #282f3a !important;
+}
+
+.search-view-page .footer {
+  border-top: 1px solid #000000 !important;
+  background: #282f3a !important;
+}
+
+body nav ul li a.nitePagination {
+  background: #282a2a !important;
+  color: #fff !important;
+}
+.niteCard {
+  background: #282f3a !important;
+}
+
+.niteCard {
+  background: #282f3a !important;
+  border-color: #282a2a !important;
+}
+
+.niteNavTabs {
+  border-color: #282a2a !important;
+}
+
+.niteBlocks {
+  background: #282a2a !important;
+  color: #fff !important;
+}
+
+/*9d9e9e*/
+.niteSearchBar,
+.input-group-text {
+  background: #282f3a !important;
+  /*403611*/
+}
+.niteSearchIcon {
+  display: none !important;
+  /*background: #402311 !important;*/
+}
+
+.breadcrumb,
+a.active {
+  background: #b9af89 !important;
+}
+
+/* Start Home Page Night CSS */
+ol.breadcrumb.bg-primary.niteBreadcrumb {
+  background-color: #66d1d1 !important;
+}
+
+li.breadcrumb-item a {
+  color: #282f3a !important;
+}
+
+nav.nav.nav-tabs a.active {
+  background-color: #ececec !important;
+  color: #282f3a !important;
+}
+
+nav.nav.nav-tabs a {
+  color: #ececec !important;
+}
+
+nav.nav.nav-tabs a:hover {
+  background-color: #13171c !important;
+  color: #c6c6c6 !important;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+}
+
+.navbar-brand-special {
+  color: #ffffff !important;
+}
+
+input.form-control {
+  background: #282f3a !important;
+  border: #282f3a !important;
+  color: #bcc6cc !important;
+}
+
+.page-link:hover {
+  background: #13171c !important;
+  color: #ececec !important;
+}
+.page-link {
+  background: #282f3a !important;
+  color: #ececec !important;
+}
+.search-form .input-group-prepend,
+.input-group-text.bg-white,
+.input-group-text {
+  background-color: #282f3a !important;
+  border: none;
+  border-radius: 5px;
+}
+
+/* End Home Page Night CSS */
+
+.niteverseNumber,
+.verseTitle,
+.niteVerseOption {
+  color: #b9af89 !important;
+}
+
+.niteverseText,
+.niteCard-Title {
+  color: #fff !important;
+}
+
+/*CHAPTERVIEW=====================================================*/
+.niteCardChapterview {
+  /*background-color: #0C090A;*/
+  background-color: #000000 !important;
+  border: none !important;
+  box-shadow: none !important;
+  /*border-color: #40371f;*/
+}
+
+.page-title .niteChapterTitle {
+  color: #66d1d1 !important;
+}
+
+.page-title .feather-chevrons-left,
+.feather-chevron-left,
+.feather-chevron-right,
+.feather-chevrons-right,
+i.mdi.mdi-auto-fix,
+i.mdi.mdi-at,
+i.mdi.mdi-pin,
+i.mdi-alert-circle-outline {
+  color: #ffffff !important;
+}
+
+.pinnedVerse {
+  background-color: #282f3a !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0.25rem !important;
+}
+
+.pinned-card i.mdi.mdi-pin {
+  color: #686868 !important;
+}
+
+.pinned-card .verseTitle {
+  color: #66d1d1 !important;
+}
+
+.pinned-card i.mdi.mdi-window-maximize,
+i.mdi.mdi-close,
+i.mdi.mdi-window-minimize {
+  color: #ffffff !important;
+}
+
+/*search=====================================================*/
+.searchBriefResults {
+  color: #ffffff !important; /*silver*/
+}
+
+/* strong=====================================================*/
+.niteCardChapterview .row p .ml-3 {
+  color: #ffffff !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  color: #fff !important;
+  background-color: #343a40 !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  color: #fff !important;
+  background-color: #454d55 !important;
+}
+
+.table-responsive .table th,
+.table td {
+  border-color: #454d55 !important;
+}
+
+/* Login Modal================================*/
+.modal-footer {
+  border-top: 1px solid #282f3a !important;
+}
+.modal-header {
+  border-bottom: 1px solid #282f3a !important;
+}
+.modal-content {
+  background-color: #13171c !important;
+  border: 1px solid #282f3a !important;
+  color: #fff !important;
+}
+.modal-header .close {
+  color: #fff !important;
+}
+
+/* Forget Password =============================*/
+.row.w-100.mx-0.auth-page .row {
+  background: #13171c !important;
+  color: #fff !important;
+}
+
+.row.w-100.mx-0.auth-page .card {
+  border: none !important;
+}
+
+.auth-form-wrapper.px-4.py-5 .text-muted {
+  color: #fff !important;
+}
+
+.row.w-100.mx-0.auth-page .noble-ui-logo {
+  color: #fff !important;
+}
+
+.strong-page h5,
+p,
+.button-group-menu span {
+  color: #ffffff !important;
+}
+.popover-header {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #454d55 !important;
+  color: #bcc6cc !important;
+}
+.popover-header span {
+  color: #fff;
+}
+.strong-page svg.feather.feather-thumbs-up.false.icon-md.mt-2 {
+  color: #727cf5 !important;
+}
+
+.strong-page .card-body .row a {
+  color: #ffffff !important;
+}
+.strong-page textarea#maxlength-textarea {
+  background: #282f3a !important;
+  border: #282f3a !important;
+  color: #bcc6cc !important;
+}
+.DraftEditor-root,
+textarea {
+  background: #282f3a !important;
+  border: #282f3a !important;
+  color: #bcc6cc !important;
+}
+.dropdown-menu.show {
+  background: #282f3a !important;
+  border: #282f3a !important;
+  color: #bcc6cc !important;
+}
+
+p.email.text-muted.mb-3 {
+  color: #ffffff !important;
+}
+.dropdown-item p.sub-text.text-muted,
+.mdi-key-plus::before {
+  color: #ffffff !important;
+}
+
+.dropdown-menu span.nav-link,
+a.nav-link {
+  color: #fff !important;
+}
+.horizontal-menu
+  .navbar
+  .navbar-content
+  .navbar-nav
+  .nav-item.nav-profile
+  .dropdown-menu
+  .dropdown-body
+  .profile-nav
+  .nav-item
+  .nav-link {
+  color: #ffffff !important;
+}
+.verseResult .card-text.mb-2 {
+  color: #fff !important;
+}
+
+.search-profile-page .card {
+  background: #282f3a !important;
+  border: #282f3a !important;
+  color: #bcc6cc !important;
+}
+.search-profile-page .card-title {
+  color: #fff !important;
+}
+.search-profile-page input#searchBarBody {
+  border: 1px solid #bcc6cc !important;
+}
+
+.user-profile-page .card.rounded {
+  background: #13171c !important;
+  border: #282f3a !important;
+  color: #ffffff !important;
+}
+
+.user-profile-page .card .card-title {
+  color: #ffffff !important;
+}
+
+.user-profile-page svg.feather.feather-more-horizontal,
+svg.feather.feather-arrow-right-circle,
+button.btn.btn-white.text-dark.niteVerseOption,
+.social-links a {
+  color: #fff !important;
+}
+
+.horizontal-menu .navbar .navbar-content .navbar-nav .nav-item svg,
+.horizontal-menu .navbar .navbar-content .navbar-nav .nav-item .nav-link {
+  color: #fff !important;
+}
+
+#seeFriends .modal-content .table td a {
+  color: #fff !important;
+}
+
+.search-view-page .dropdown-menu .dropdown-item {
+  color: #ffffff !important;
+}
+
+h3,
+h5 {
+  color: #ffffff;
+}
+
+.caseStudyInfo .card .card-body {
+  color: #000;
+}

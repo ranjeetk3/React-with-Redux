@@ -1,21 +1,27 @@
-import React from 'react';
-import Counter from './components/Counter';
-import AddCounter from './components/AddCounter';
-import RemoveCounter from './components/RemoveCounter';
+import React, { Suspense, lazy } from "react";
+import { Provider } from "react-redux";
+import configureStore from "./store";
+import "./App.css";
+import Loader from "./components/Loader";
+const Routes = lazy(() => import("./Routes"));
 
-const App = () => {
-  return (
-    <div className="container">
-      <Counter></Counter><br />
-      <div className="columns">
-        <div className="column is-11">
-          <AddCounter></AddCounter>
-        </div>
-        <div className="column auto">
-          <RemoveCounter></RemoveCounter>
-        </div>
-      </div>
-      </div>
-  )
+class App extends React.Component {
+  componentDidMount() {
+    this.loadCssFile();
+  }
+  loadCssFile = async () => {
+    let nightMode = localStorage.getItem("nightMode") || "false";
+    nightMode !== "false" && (await import(`./night.css`));
+  };
+  render() {
+    return (
+      <Provider store={configureStore()}>
+        <Suspense fallback={<Loader active={true} text="Please wait..." />}>
+          <Routes />
+        </Suspense>
+      </Provider>
+    );
+  }
 }
+
 export default App;
