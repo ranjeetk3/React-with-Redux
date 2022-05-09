@@ -4,7 +4,7 @@ export const ALERT = {
 };
 
 export const CAPTCHA = {
-  KEY: "6LcvBdYfAAAAAOljt0nCxps2w6MVg7OmbBh0_WIn", //live:- 6LdLydUfAAAAAGr2Lh_4r6xb01ZUxEr_d3pzY2MM // dev-6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+  KEY: "6LcvBdYfAAAAALAkB2MY6crw7ibrkz-UiH6tAizx", //live:- 6LcvBdYfAAAAAOljt0nCxps2w6MVg7OmbBh0_WIn // dev-6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
 };
 
 export const MSG = {
