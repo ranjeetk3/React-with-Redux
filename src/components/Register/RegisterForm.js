@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-import get from "lodash/get";
 import { Form } from "react-bootstrap";
 import moment from "moment";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -81,7 +80,7 @@ class RegisterForm extends React.Component {
   };
 
   signUpUser = (email, password, username) => {
-    const { handleServerErrorMsg, history } = this.props;
+    const { history } = this.props;
     const { firstName, lastName } = this.state;
     const that = this;
     try {
@@ -126,12 +125,14 @@ class RegisterForm extends React.Component {
         .catch((error) => {
           switch (error.code) {
             case "auth/email-already-in-use":
-              handleServerErrorMsg("Email already in use !");
+              this.setState({
+                errorMessage: "Email already in use !",
+              });
               break;
             case "auth/internal-error":
-              handleServerErrorMsg(
-                "We are upgrading our system, Please try later !"
-              );
+              this.setState({
+                errorMessage: "We are upgrading our system, Please try later !",
+              });
               break;
             default:
           }

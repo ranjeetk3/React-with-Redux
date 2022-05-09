@@ -3,15 +3,51 @@ import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 
 import LoginForm from "./LoginForm";
+import Alert from "../Alert";
 import { LOGIN_REDIRECT } from "../../constants/static";
 
 import "./style.css";
 
 class Login extends React.Component {
+  state = {
+    serverMsg: null,
+  };
+  componentDidMount() {
+    const isSentLink = sessionStorage.getItem("confirmationLinkSent") || false;
+    if (isSentLink === "true") {
+      this.setState({
+        serverMsg: "An email with a confirmation link has been sent to you",
+      });
+      setTimeout(function () {
+        sessionStorage.setItem("confirmationLinkSent", false);
+      }, 10000);
+    } else {
+      this.setState({
+        serverMsg: null,
+      });
+    }
+  }
+
+  handleAlertClose = () => {
+    this.setState({
+      serverMsg: null,
+    });
+  };
+
   render() {
+    const { serverMsg } = this.state;
     return (
       <div className="main-wrapper">
         <div className="page-wrapper full-page">
+          {serverMsg && (
+            <Alert
+              description={serverMsg}
+              handleAlertClose={this.handleAlertClose}
+              tooltip={false}
+              tooltipMsg={[]}
+              alertType="warning"
+            />
+          )}
           <div className="page-content d-flex align-items-center justify-content-center">
             <div className="row w-100 mx-0 auth-page">
               <div className="col-xl-6 col-lg-5 col-md-8 mx-auto">
