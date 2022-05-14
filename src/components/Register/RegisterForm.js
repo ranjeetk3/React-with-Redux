@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { validateRegistrationForm, validateEmail } from "./validation";
 import { CAPTCHA } from "../../constants/static";
 import { UsersTable, userName } from "../../firebase/users";
+import { AdminConfigTable } from "../../firebase/adminConfig";
 var firebase = require("firebase");
 let usersEmail = [];
 class RegisterForm extends React.Component {
@@ -22,11 +23,13 @@ class RegisterForm extends React.Component {
     captchaVal: null,
     termsAccepted: false,
     users: [],
+    isRegisterDisable: false,
   };
 
   componentDidMount() {
     usersEmail = [];
     this.getAllUsers();
+    this.handleGetAdminConfig();
   }
 
   getAllUsers = async () => {
@@ -77,6 +80,18 @@ class RegisterForm extends React.Component {
     this.setState({
       termsAccepted: e.target.checked,
     });
+  };
+
+  handleGetAdminConfig = async () => {
+    try {
+      AdminConfigTable.on("value", (snapshot) => {
+        this.setState({
+          isRegisterDisable: snapshot.val().isRegisterDisable.register || false,
+        });
+      });
+    } catch (someError) {
+      console.log(someError);
+    }
   };
 
   signUpUser = (email, password, username) => {
@@ -152,8 +167,8 @@ class RegisterForm extends React.Component {
       lastName,
       captchaVal,
       termsAccepted,
+      isRegisterDisable,
     } = this.state;
-    const { registerDisable } = this.props;
     this.handleIsUserExist();
     const error = validateRegistrationForm(
       firstName,
@@ -181,7 +196,7 @@ class RegisterForm extends React.Component {
       captchaVal &&
       termsAccepted
     ) {
-      if (!registerDisable) {
+      if (!isRegisterDisable) {
         this.signUpUser(
           email.toLowerCase(),
           password,
