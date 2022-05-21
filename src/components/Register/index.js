@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import get from "lodash/get";
 
 import RegisterForm from "./RegisterForm";
+import Loader from "../Loader";
 import { LOGIN_REDIRECT } from "../../constants/static";
 
 import "./style.css";
@@ -11,6 +12,7 @@ import "./style.css";
 class Register extends React.Component {
   state = {
     serverMsg: "",
+    isLoaderActive: false,
   };
 
   handleServerMsg = (msg) => {
@@ -19,11 +21,15 @@ class Register extends React.Component {
     });
   };
 
+  handleLoader = (status) => {
+    this.setState({ isLoaderActive: status });
+  };
+
   render() {
-    const { serverMsg } = this.state;
-    console.log(serverMsg);
+    const { serverMsg, isLoaderActive } = this.state;
     return (
       <div className="main-wrapper">
+        <Loader active={isLoaderActive} text="Please wait..." />
         <div className="page-wrapper full-page">
           <div className="page-content d-flex align-items-center justify-content-center">
             <div className="row w-100 mx-0 auth-page">
@@ -53,7 +59,10 @@ class Register extends React.Component {
                         <h5 className="text-muted font-weight-normal mb-4">
                           Register to your account
                         </h5>
-                        <RegisterForm handleServerMsg={this.handleServerMsg} />
+                        <RegisterForm
+                          handleServerMsg={this.handleServerMsg}
+                          handleLoader={this.handleLoader}
+                        />
                         <br />
                         <p className="text-muted font-weight-normal">
                           Have an account ?{" "}

@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 
 import LoginForm from "./LoginForm";
 import Alert from "../Alert";
+import Loader from "../Loader";
 import { LOGIN_REDIRECT } from "../../constants/static";
 
 import "./style.css";
@@ -11,6 +12,7 @@ import "./style.css";
 class Login extends React.Component {
   state = {
     serverMsg: null,
+    isLoaderActive: false,
   };
   componentDidMount() {
     const isSentLink = sessionStorage.getItem("confirmationLinkSent") || false;
@@ -34,10 +36,15 @@ class Login extends React.Component {
     });
   };
 
+  handleLoader = (status) => {
+    this.setState({ isLoaderActive: status });
+  };
+
   render() {
-    const { serverMsg } = this.state;
+    const { serverMsg, isLoaderActive } = this.state;
     return (
       <div className="main-wrapper">
+        <Loader active={isLoaderActive} text="Please wait..." />
         <div className="page-wrapper full-page">
           {serverMsg && (
             <Alert
@@ -64,7 +71,7 @@ class Login extends React.Component {
                         <h5 className="text-muted font-weight-normal mb-4">
                           Log in to your account
                         </h5>
-                        <LoginForm />
+                        <LoginForm handleLoader={this.handleLoader} />
                         <br />
                         <p className="text-muted font-weight-normal">
                           Not a user ?{" "}

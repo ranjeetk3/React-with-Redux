@@ -94,7 +94,7 @@ class RegisterForm extends React.Component {
     }
   };
 
-  signUpUser = (email, password, username) => {
+  signUpUser = (email, password, username, handleLoader) => {
     const { history } = this.props;
     const { firstName, lastName } = this.state;
     const that = this;
@@ -122,6 +122,7 @@ class RegisterForm extends React.Component {
             .currentUser.sendEmailVerification({})
             .then(() => {
               sessionStorage.setItem("confirmationLinkSent", true);
+              handleLoader(false);
               history.push("/");
               that.setState({
                 firstName: "",
@@ -151,9 +152,12 @@ class RegisterForm extends React.Component {
               break;
             default:
           }
+          handleLoader(false);
+          window.scrollTo(0, 0);
         });
     } catch (err) {
       alert("Error : ", err);
+      handleLoader(false);
     }
   };
 
@@ -169,6 +173,7 @@ class RegisterForm extends React.Component {
       termsAccepted,
       isRegisterDisable,
     } = this.state;
+    const { handleLoader } = this.props;
     this.handleIsUserExist();
     const error = validateRegistrationForm(
       firstName,
@@ -197,10 +202,12 @@ class RegisterForm extends React.Component {
       termsAccepted
     ) {
       if (!isRegisterDisable) {
+        handleLoader(true);
         this.signUpUser(
           email.toLowerCase(),
           password,
-          `${firstName} ${lastName}`
+          `${firstName} ${lastName}`,
+          handleLoader
         );
       } else {
         this.setState({

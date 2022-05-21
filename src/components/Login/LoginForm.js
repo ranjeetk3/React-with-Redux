@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
     }
   };
 
-  signInWithEmailAndPassword = async (email, password) => {
+  signInWithEmailAndPassword = async (email, password, handleLoader) => {
     try {
       let res = await firebase
         .auth()
@@ -78,16 +78,21 @@ class LoginForm extends React.Component {
             email
           )}&p=${encode(password)}`
         );
+        handleLoader(false);
       } else {
+        handleLoader(false);
         this.setState({
           errorMessage:
             "You must verify your email before signing in to your account.  Please check your email for a confirmation link",
         });
+        window.scrollTo(0, 0);
       }
     } catch (err) {
+      handleLoader(false);
       this.setState({
         errorMessage: err.message,
       });
+      window.scrollTo(0, 0);
     }
   };
 
@@ -101,6 +106,7 @@ class LoginForm extends React.Component {
       captchaVal,
       isLoginDisable,
     } = this.state;
+    const { handleLoader } = this.props;
     const error = validateLogin(email, password, captchaVal);
     this.setState({
       error: error,
@@ -115,7 +121,12 @@ class LoginForm extends React.Component {
       captchaVal
     ) {
       if (!isLoginDisable) {
-        this.signInWithEmailAndPassword(email.toLowerCase(), password);
+        handleLoader(true);
+        this.signInWithEmailAndPassword(
+          email.toLowerCase(),
+          password,
+          handleLoader
+        );
       } else {
         this.setState({
           errorMessage: "We are upgrading our system, Please try later !",
